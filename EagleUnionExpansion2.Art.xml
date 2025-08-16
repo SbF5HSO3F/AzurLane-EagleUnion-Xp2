@@ -404,7 +404,9 @@
 		</Element>
 		<Element>
 			<libraryName text="LeaderFallback"/>
-			<relativePackagePaths/>
+			<relativePackagePaths>
+				<Element text="leaderfallbacks"/>
+			</relativePackagePaths>
 		</Element>
 		<Element>
 			<libraryName text="LeaderLighting"/>

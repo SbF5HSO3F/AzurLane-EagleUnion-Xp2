@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- EagleUnion_Shangri-La_Leader -->
+<!-- Author: jjj -->
+<!-- DateCreated: 2025/8/16 21:39:43 -->
+<GameData>
+	<Types>
+		<!--香格里拉-->
+		<Row Type="LEADER_SHANGRI_LA_CV38"				        Kind="KIND_LEADER"/>
+		<Row Type="TRAIT_LEADER_OBSERVER_OF_THE_SKY_AND_SEA"	Kind="KIND_TRAIT"/>
+	</Types>
+	<Leaders>
+		<!--香格里拉-->
+		<Row LeaderType="LEADER_SHANGRI_LA_CV38" Name="LOC_LEADER_SHANGRI_LA_CV38_NAME" Sex="Female" InheritFrom="LEADER_DEFAULT" SceneLayers="4"/>
+	</Leaders>
+	<CivilizationLeaders>
+		<Row CivilizationType="CIVILIZATION_EAGLE_UNION" LeaderType="LEADER_SHANGRI_LA_CV38" CapitalName="LOC_CITY_NAME_EAGLE_UNION_NORFOLK"/>
+	</CivilizationLeaders>
+	<Traits>
+		<!--香格里拉-->
+		<Row TraitType="TRAIT_LEADER_OBSERVER_OF_THE_SKY_AND_SEA" Name="LOC_TRAIT_LEADER_OBSERVER_OF_THE_SKY_AND_SEA_NAME" Description="LOC_TRAIT_LEADER_OBSERVER_OF_THE_SKY_AND_SEA_DESCRIPTION"/>
+	</Traits>
+	<LeaderTraits>
+		<!--香格里拉-->
+		<Row LeaderType="LEADER_SHANGRI_LA_CV38" TraitType="TRAIT_LEADER_OBSERVER_OF_THE_SKY_AND_SEA"/>
+	</LeaderTraits>
+	<HistoricalAgendas>
+
+	</HistoricalAgendas>
+	<Agendas>
+
+	</Agendas>
+	<LeaderQuotes>
+		<Row LeaderType="LEADER_SHANGRI_LA_CV38" Quote="LOC_PEDIA_LEADERS_PAGE_LEADER_SHANGRI_LA_CV38_QUOTE" />
+	</LeaderQuotes>
+	<LoadingInfo>
+		<Row LeaderType="LEADER_SHANGRI_LA_CV38" ForegroundImage="IMG_EAGLE_UNION_LEADER_SHANGRI_LA_CV38_LOADING_FOREGROUND" BackgroundImage="IMG_EAGLE_UNION_LOADING_BACKGROUND"/>
+	</LoadingInfo>
+	<DiplomacyInfo>
+		<Row Type="LEADER_SHANGRI_LA_CV38" BackgroundImage="IMG_EAGLE_UNION_DIPLOMACY_BACKGROUND.dds"/>
+	</DiplomacyInfo>
+	<TraitModifiers>
+		<!--KANSEN-->
+		<Row>
+			<TraitType>TRAIT_LEADER_OBSERVER_OF_THE_SKY_AND_SEA</TraitType>
+			<ModifierId>EAGLE_UNION_KANSEN_UNLOCKED_TECH_SAILING</ModifierId>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_LEADER_OBSERVER_OF_THE_SKY_AND_SEA</TraitType>
+			<ModifierId>EAGLE_UNION_KANSEN_UNLOCKED_TECH_SHIPBUILDING</ModifierId>
+		</Row>
+    </TraitModifiers>
+</GameData>

@@ -33,7 +33,7 @@
 			<Text>天与海的观测者</Text>
 		</Replace>
 		<Replace Tag="LOC_TRAIT_LEADER_OBSERVER_OF_THE_SKY_AND_SEA_DESCRIPTION" Language="zh_Hans_CN">
-			<Text>测试文本。</Text>
+			<Text>每回合获得等同于你已解锁科技和市政所需花费1%的 [ICON_ResearchPoint] 研究点数。所有单位获得“记录”单位命令。</Text>
 		</Replace>
 		<!--Lua浮动文字显示-->
 

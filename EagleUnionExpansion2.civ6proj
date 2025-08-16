@@ -47,7 +47,7 @@
         <UpdateArt id="Art">
           <File>(Mod Art Dependency File)</File>
         </UpdateArt>
-          <UpdateIcons id="Icons">
+        <UpdateIcons id="Icons">
           <File>EagleUnion2_Icons.xml</File>
         </UpdateIcons>
         <UpdateColors id="Colors">
@@ -61,6 +61,25 @@
         </UpdateText>
       </FrontEndActions>
     ]]></FrontEndActionData>
+    <InGameActionData><![CDATA[
+      <InGameActions>
+        <UpdateArt id="Art">
+          <File>(Mod Art Dependency File)</File>
+        </UpdateArt>
+        <UpdateIcons id="Icons">
+          <File>EagleUnion2_Icons.xml</File>
+        </UpdateIcons>
+        <UpdateColors id="Colors">
+          <File>EagleUnion2_Colors.xml</File>
+        </UpdateColors>
+        <UpdateDatabase id="ShangriLa">
+          <File>Data/Shangri-La/EagleUnion_Shangri-La_Leader.xml</File>
+        </UpdateDatabase>
+        <UpdateText id="ShangriLa_Text">
+          <File>Text/zh_Hans_CN/EagleUnion_Shangri-La_CNText.xml</File>
+        </UpdateText>
+      </InGameActions>
+    ]]></InGameActionData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
@@ -69,6 +88,9 @@
     <None Include="EagleUnionExpansion2.Art.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\Shangri-La\EagleUnion_Shangri-La_Leader.xml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="EagleUnion2_Config.xml">
       <SubType>Content</SubType>
     </Content>

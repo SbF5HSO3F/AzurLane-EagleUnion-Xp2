@@ -45,6 +45,10 @@
 			<m_EntryID text="IMG_LEADER_SHANGRI_LA_CV38_FOREGROUND"/>
 			<m_ObjectName text="IMG_LEADER_SHANGRI_LA_CV38_FOREGROUND"/>
 		</Element>
+		<Element>
+			<m_EntryID text="IMG_EAGLE_UNION_LEADER_SHANGRI_LA_CV38_LOADING_FOREGROUND"/>
+			<m_ObjectName text="IMG_EAGLE_UNION_LEADER_SHANGRI_LA_CV38_LOADING_FOREGROUND"/>
+		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>
 		<Element>WINDOWS</Element>
