@@ -2,13 +2,13 @@
 <Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
-    <Name>EagleUnionExpansion2</Name>
+    <Name>LOC_EAGLE_UNION_XP2_NAME</Name>
     <Guid>4075b4a0-06ee-4307-8666-eee59f27e96c</Guid>
     <ProjectGuid>0b8f5d62-9b48-4b90-ad19-d13b926af8e8</ProjectGuid>
     <ModVersion>1</ModVersion>
-    <Teaser>This is a brief description of the mod.</Teaser>
-    <Description>This is a brief description of the mod.</Description>
-    <Authors>jjj</Authors>
+    <Teaser>LOC_EAGLE_UNION_XP2_TEASER</Teaser>
+    <Description>LOC_EAGLE_UNION_XP2_DEACRIPTION</Description>
+    <Authors>HSbF6HSO3F</Authors>
     <SpecialThanks>
     </SpecialThanks>
     <AffectsSavedGames>true</AffectsSavedGames>
@@ -18,12 +18,75 @@
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
     <AssemblyName>EagleUnionExpansion2</AssemblyName>
     <RootNamespace>EagleUnionExpansion2</RootNamespace>
+    <LocalizedTextData><![CDATA[
+      <LocalizedText>
+        <Text id="LOC_EAGLE_UNION_XP2_NAME">
+          <en_US>Eagle Union-Leaders Expansion II</en_US>
+          <zh_Hans_CN>白鹰联邦·领袖扩展2</zh_Hans_CN>
+          <zh_Hant_HK>白鷹聯邦·領袖擴展2</zh_Hant_HK>
+        </Text>
+        <Text id="LOC_EAGLE_UNION_XP2_TEASER">
+          <en_US>Added more leaders to the mod "Auzr Lane-Eagle Union".</en_US>
+          <zh_Hans_CN>为模组“碧蓝航线·白鹰联邦”添加更多领袖。</zh_Hans_CN>
+          <zh_Hant_HK>為模組「碧藍航線·白鷹聯邦」添加更多領袖。</zh_Hant_HK>
+        </Text>
+        <Text id="LOC_EAGLE_UNION_XP2_DEACRIPTION">
+          <en_US>Added more leaders to the mod "Auzr Lane-Eagle Union". There is currently 4 leader added: Shangri-La.</en_US>
+          <zh_Hans_CN>为模组“碧蓝航线·白鹰联邦”添加更多领袖。当前共添加了1名领袖：香格里拉。</zh_Hans_CN>
+          <zh_Hant_HK>為模組「碧藍航線·白鷹聯邦」添加更多領袖。當前共添加了1名領袖：香格里拉。</zh_Hant_HK>
+        </Text>
+      </LocalizedText>
+    ]]></LocalizedTextData>
+    <AssociationData><![CDATA[
+      <Associations>
+        <Dependency type="Mod" title="Azur Lane-Eagle Union" id="4c8b8884-bdb7-4084-8ea7-a6e08c768f4b" />
+      </Associations>
+    ]]></AssociationData>
+    <FrontEndActionData><![CDATA[
+      <FrontEndActions>
+        <UpdateArt id="Art">
+          <File>(Mod Art Dependency File)</File>
+        </UpdateArt>
+          <UpdateIcons id="Icons">
+          <File>EagleUnion2_Icons.xml</File>
+        </UpdateIcons>
+        <UpdateColors id="Colors">
+          <File>EagleUnion2_Colors.xml</File>
+        </UpdateColors>
+        <UpdateDatabase id="Config">
+          <File>EagleUnion2_Config.xml</File>
+        </UpdateDatabase>
+        <UpdateText id="ShangriLa_Text">
+          <File>Text/zh_Hans_CN/EagleUnion_Shangri-La_CNText.xml</File>
+        </UpdateText>
+      </FrontEndActions>
+    ]]></FrontEndActionData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <None Include="EagleUnionExpansion2.Art.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EagleUnion2_Config.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="EagleUnion2_Icons.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="EagleUnion2_Colors.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Text\zh_Hans_CN\EagleUnion_Shangri-La_CNText.xml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data" />
+    <Folder Include="Data\Shangri-La" />
+    <Folder Include="Text" />
+    <Folder Include="Text\zh_Hans_CN" />
   </ItemGroup>
   <Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" />
 </Project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- EagleUnion2_Icons -->
+<!-- Author: HSbF6HSO3F -->
+<!-- DateCreated: 2025/8/16 16:13:06 -->
+<GameData>
+    <IconTextureAtlases>
+        <!--领袖图标-->
+        <Row Name="ATLAS_EAGLE_UNION_XP2_LEADERS" IconSize="32" IconsPerRow="5" Filename="EAGLE_UNION_XP2_LEADERS_32"/>
+        <Row Name="ATLAS_EAGLE_UNION_XP2_LEADERS" IconSize="45" IconsPerRow="5" Filename="EAGLE_UNION_XP2_LEADERS_45"/>
+        <Row Name="ATLAS_EAGLE_UNION_XP2_LEADERS" IconSize="48" IconsPerRow="5" Filename="EAGLE_UNION_XP2_LEADERS_48"/>
+        <Row Name="ATLAS_EAGLE_UNION_XP2_LEADERS" IconSize="50" IconsPerRow="5" Filename="EAGLE_UNION_XP2_LEADERS_50"/>
+        <Row Name="ATLAS_EAGLE_UNION_XP2_LEADERS" IconSize="55" IconsPerRow="5" Filename="EAGLE_UNION_XP2_LEADERS_55"/>
+        <Row Name="ATLAS_EAGLE_UNION_XP2_LEADERS" IconSize="64" IconsPerRow="5" Filename="EAGLE_UNION_XP2_LEADERS_64"/>
+        <Row Name="ATLAS_EAGLE_UNION_XP2_LEADERS" IconSize="80" IconsPerRow="5" Filename="EAGLE_UNION_XP2_LEADERS_80"/>
+        <Row Name="ATLAS_EAGLE_UNION_XP2_LEADERS" IconSize="256" IconsPerRow="5" Filename="EAGLE_UNION_XP2_LEADERS_256"/>
+    </IconTextureAtlases>
+    <IconDefinitions>
+        <!--香格里拉-->
+        <Row Name="ICON_LEADER_SHANGRI_LA_CV38" Atlas="ATLAS_EAGLE_UNION_XP2_LEADERS" Index="0"/>
+    </IconDefinitions>
+</GameData>

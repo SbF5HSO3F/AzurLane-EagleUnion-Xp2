@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- EagleUnion2_Colors -->
+<!-- Author: HSbF6HSO3F -->
+<!-- DateCreated: 2025/8/16 16:13:42 -->
+<GameData>
+	<Colors>
+		<!--香格里拉-->
+		<Row>
+			<Type>SHANGRI_LA_CV38_GARY</Type>
+			<Color>175,168,174,255</Color>
+		</Row>
+		<Row>
+			<Type>SHANGRI_LA_CV38_ICE</Type>
+			<Color>223,247,255,255</Color>
+		</Row>
+		<Row>
+			<Type>SHANGRI_LA_CV38_DARK</Type>
+			<Color>39,38,41,255</Color>
+		</Row>
+		<Row>
+			<Type>SHANGRI_LA_CV38_BULE</Type>
+			<Color>64,67,96,255</Color>
+		</Row>
+        <Row>
+			<Type>SHANGRI_LA_CV38_WHITE</Type>
+			<Color>244,245,232,255</Color>
+		</Row>
+	</Colors>
+	<PlayerColors>
+		<!--香格里拉-->
+		<Row>
+			<Type>LEADER_SHANGRI_LA_CV38</Type>
+			<Usage>Unique</Usage>
+			<PrimaryColor>SHANGRI_LA_CV38_GARY</PrimaryColor>
+			<SecondaryColor>SHANGRI_LA_CV38_ICE</SecondaryColor>
+			<Alt1PrimaryColor>SHANGRI_LA_CV38_DARK</Alt1PrimaryColor>
+			<Alt1SecondaryColor>SHANGRI_LA_CV38_GARY</Alt1SecondaryColor>
+            <Alt2PrimaryColor>SHANGRI_LA_CV38_BULE</Alt2PrimaryColor>
+			<Alt2SecondaryColor>SHANGRI_LA_CV38_WHITE</Alt2SecondaryColor>
+		</Row>
+	</PlayerColors>
+</GameData>
