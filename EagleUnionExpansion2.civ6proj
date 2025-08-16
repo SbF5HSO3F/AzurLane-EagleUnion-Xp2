@@ -72,6 +72,9 @@
         <UpdateColors id="Colors">
           <File>EagleUnion2_Colors.xml</File>
         </UpdateColors>
+        <ImportFiles id="Import">
+          <File>Import/EagleUnionPoint_Shangri-La.lua</File>
+        </ImportFiles>
         <UpdateDatabase id="ShangriLa">
           <File>Data/Shangri-La/EagleUnion_Shangri-La_Leader.xml</File>
         </UpdateDatabase>
@@ -100,6 +103,9 @@
     <Content Include="EagleUnion2_Colors.xml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Import\EagleUnionPoint_Shangri-La.lua">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Text\zh_Hans_CN\EagleUnion_Shangri-La_CNText.xml">
       <SubType>Content</SubType>
     </Content>
@@ -107,6 +113,7 @@
   <ItemGroup>
     <Folder Include="Data" />
     <Folder Include="Data\Shangri-La" />
+    <Folder Include="Import" />
     <Folder Include="Text" />
     <Folder Include="Text\zh_Hans_CN" />
   </ItemGroup>
