@@ -8,6 +8,8 @@ include('EagleCore')
 --||===================local variables====================||--
 
 local shangriLaPercent = 1
+local key = 'ShangriLaResCount'
+local modifierPerRecord = 5
 
 --||====================base functions====================||--
 
@@ -52,6 +54,22 @@ EaglePointManager.Points.Extra.ShangriLaCulture = {
     GetTooltip = function(self, playerID)
         local yield = self.GetPointYield(playerID)
         return yield ~= 0 and Locale.Lookup(self.Tooltip, yield) or ''
+    end
+}
+
+EaglePointManager.Points.Modifier.ShangriLa = {
+    Tooltip = 'LOC_EAGLE_POINT_MODIFIER_SHANGRI_LA',
+    GetModifier = function(playerID)
+        --获取数量
+        local datas = Players[playerID]:GetProperty(key)
+        local count = datas and datas.Count or 0
+        --获取点数减免
+        local modifier = count * modifierPerRecord
+        return EagleMath.Round(modifier)
+    end,
+    GetTooltip = function(self, playerID)
+        local modifier = self.GetModifier(playerID)
+        return modifier ~= 0 and Locale.Lookup(self.Tooltip, modifier) or ''
     end
 }
 

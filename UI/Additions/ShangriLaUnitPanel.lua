@@ -69,6 +69,27 @@ function ShangriLaPanel:Refresh()
         -- 功能提示文本
         local tooltip = Locale.Lookup('LOC_SHANGRI_LA_RECORD_TITLE') ..
             '[NEWLINE][NEWLINE]' .. Locale.Lookup('LOC_SHANGRI_LA_RECORD_DESC')
+        -- 记录资源总结
+        local player = Players[unit:GetOwner()]
+        local count = player:GetProperty(key_1) or {}
+        local datas = player:GetProperty(key_2) or {}
+        if datas.Count and datas.Count > 0 then
+            tooltip = tooltip .. '[NEWLINE][NEWLINE]' ..
+                Locale.Lookup('LOC_SHANGRI_LA_RECORDED', datas.Count)
+                .. '[NEWLINE][ICON_Bullet]'
+            local tab = Locale.Lookup('LOC_SHANGRI_LA_RECORD_TAB')
+            local first = true
+            for index, _ in pairs(count) do
+                local resource = Resources:GetResource(index)
+                if resource ~= nil then
+                    if not first then
+                        tooltip = tooltip .. tab
+                    end
+                    tooltip = tooltip .. Locale.Lookup('LOC_SHANGRI_LA_RECORD_RESOURCE', resource.Icon, resource.Name)
+                    first = false
+                end
+            end
+        end
         if disable then
             tooltip = tooltip .. '[NEWLINE][NEWLINE]' .. detail.Reason
         else

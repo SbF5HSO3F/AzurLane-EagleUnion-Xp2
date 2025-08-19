@@ -42,6 +42,9 @@
 		<Replace Tag="LOC_EAGLE_POINT_FROM_SHANGRI_LA_CIVICS" Language="zh_Hans_CN">
 			<Text>[NEWLINE]{1_point : number +#.#;-#.#} 来自已解锁的市政</Text>
 		</Replace>
+		<Replace Tag="LOC_EAGLE_POINT_MODIFIER_SHANGRI_LA" Language="zh_Hans_CN">
+			<Text>[NEWLINE][ICON_Bullet]{1_percent : number +#.#;-#.#}% 来自记录的资源</Text>
+		</Replace>
 		<!--单位命令-->
 		<Replace Tag="LOC_SHANGRI_LA_RECORD_TITLE" Language="zh_Hans_CN">
 			<Text>记录</Text>
@@ -51,6 +54,15 @@
 		</Replace>
 		<Replace Tag="LOC_SHANGRI_LA_RECORD_DETAIL" Language="zh_Hans_CN">
 			<Text>记录资源：{1_Icon} {2_Resource}</Text>
+		</Replace>
+		<Replace Tag="LOC_SHANGRI_LA_RECORDED" Language="zh_Hans_CN">
+			<Text>已记录{1_amount}个资源：</Text>
+		</Replace>
+		<Replace Tag="LOC_SHANGRI_LA_RECORD_TAB" Language="zh_Hans_CN">
+			<Text>、</Text>
+		</Replace>
+		<Replace Tag="LOC_SHANGRI_LA_RECORD_RESOURCE" Language="zh_Hans_CN">
+			<Text> {1_Icon} {2_Resource}</Text>
 		</Replace>
 		<!--特殊加成-->
 		

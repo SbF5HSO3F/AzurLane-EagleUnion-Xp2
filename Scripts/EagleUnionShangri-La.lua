@@ -58,6 +58,8 @@ function ShangriLaRecord(playerID, param)
         for i = 1, change do player:AttachModifierByID(modifier) end
     end
     player:SetProperty(key_2, datas)
+    -- 设置记录完成
+    Game:SetProperty('ShangriLaReset', true)
 end
 
 --||======================initialize======================||--
