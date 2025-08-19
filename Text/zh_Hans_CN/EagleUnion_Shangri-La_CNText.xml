@@ -49,6 +49,9 @@
 		<Replace Tag="LOC_SHANGRI_LA_RECORD_DESC" Language="zh_Hans_CN">
 			<Text>在位于或相邻资源的单元格上激活，每回合获得的 [ICON_ResearchPoint] 研究点数+5%。</Text>
 		</Replace>
+		<Replace Tag="LOC_SHANGRI_LA_RECORD_DETAIL" Language="zh_Hans_CN">
+			<Text>记录资源：{1_Icon} {2_Resource}</Text>
+		</Replace>
 		<!--特殊加成-->
 		
 		<!--领袖项目-->

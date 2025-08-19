@@ -19,31 +19,32 @@ ShangriLaPanel = {}
 
 -- 获取细节
 function ShangriLaPanel.GetDetails(pUnit)
-    local details = {
+    local details, player = {
         Disable = true,
         Index = -1,
-        Resaon = ''
-    }
-    local count = Players[pUnit:GetOwner()]:GetProperty(key_1) or {}
+        Reason = ''
+    }, Players[pUnit:GetOwner()]
+    local count = player:GetProperty(key_1) or {}
+    local resourceData = player:GetResources()
     -- 单位是否相邻或位于资源单元格
     local tplots = Map.GetAdjacentPlots(pUnit:GetX(), pUnit:GetY())
     for _, plot in ipairs(tplots) do
         local resource = plot:GetResourceType()
-        if resource ~= -1 then
+        if resource ~= -1 and resourceData:IsResourceVisible(resource) then
             details.Index = resource
             if count[resource] ~= true then break end
         end
     end
     -- 是否拥有资源
     if details.Index == -1 then
-        Resaon = Locale.Lookup('LOC_EAGLE_ACTION_REASON_NO_ON_OR_ADJACENT_RESOURCES')
-    end
-
-    -- 资源是否已经被记录
-    if count[details.Index] == true then
-        Resaon = Locale.Lookup('LOC_EAGLE_ACTION_REASON_RESOURCES_RECORDED')
+        details.Reason = Locale.Lookup('LOC_EAGLE_ACTION_REASON_NO_ON_OR_ADJACENT_RESOURCES')
     else
-        details.Disable = false
+        -- 资源是否已经被记录
+        if count[details.Index] == true then
+            details.Reason = Locale.Lookup('LOC_EAGLE_ACTION_REASON_RESOURCES_RECORDED')
+        else
+            details.Disable = false
+        end
     end
 
     return details
@@ -60,7 +61,8 @@ function ShangriLaPanel:Refresh()
         -- 显示按钮
         Controls.ShangriLaGrid:SetHide(false)
         -- 获取细节
-        local detail = ShangriLaPanel.GetDetails(unit)
+        local detail = self.GetDetails(unit)
+        EagleDebug:printd(detail, '', 'Details')
         local disable = detail.Disable
         -- 设置按钮状态
         Controls.Record:SetDisabled(disable)
@@ -70,6 +72,15 @@ function ShangriLaPanel:Refresh()
             '[NEWLINE][NEWLINE]' .. Locale.Lookup('LOC_SHANGRI_LA_RECORD_DESC')
         if disable then
             tooltip = tooltip .. '[NEWLINE][NEWLINE]' .. detail.Reason
+        else
+            local resource = Resources:GetResource(detail.Index)
+            if resource ~= nil then
+                tooltip = tooltip .. '[NEWLINE][NEWLINE]' ..
+                    Locale.Lookup('LOC_SHANGRI_LA_RECORD_DETAIL', resource.Icon, resource.Name)
+                    .. '[NEWLINE]' .. resource:GetChangeYieldsTooltip()
+            else
+                print('Error: Resource not found.')
+            end
         end
         -- 设置提示文本
         Controls.Record:SetToolTipString(tooltip)
