@@ -42,6 +42,8 @@
 		<Replace Tag="LOC_EAGLE_POINT_FROM_SHANGRI_LA_CIVICS" Language="zh_Hans_CN">
 			<Text>[NEWLINE]{1_point : number +#.#;-#.#} 来自已解锁的市政</Text>
 		</Replace>
+		<!--单位命令-->
+		
 		<!--特殊加成-->
 		
 		<!--领袖项目-->

@@ -75,6 +75,12 @@
         <ImportFiles id="Import">
           <File>Import/EagleUnionPoint_Shangri-La.lua</File>
         </ImportFiles>
+        <AddUserInterfaces id="UI">
+          <Properties>
+            <Context>InGame</Context>
+          </Properties>
+          <File>UI/Additions/ShangriLaUnitPanel.xml</File>
+        </AddUserInterfaces>
         <UpdateDatabase id="ShangriLa">
           <File>Data/Shangri-La/EagleUnion_Shangri-La_Leader.xml</File>
         </UpdateDatabase>
@@ -109,13 +115,21 @@
     <Content Include="Text\zh_Hans_CN\EagleUnion_Shangri-La_CNText.xml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="UI\Additions\ShangriLaUnitPanel.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UI\Additions\ShangriLaUnitPanel.xml">
+      <SubType>Content</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data" />
     <Folder Include="Data\Shangri-La" />
     <Folder Include="Import" />
+    <Folder Include="UI" />
     <Folder Include="Text" />
     <Folder Include="Text\zh_Hans_CN" />
+    <Folder Include="UI\Additions" />
   </ItemGroup>
   <Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" />
 </Project>

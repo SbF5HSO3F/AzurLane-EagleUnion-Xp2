@@ -16,6 +16,8 @@
     </IconTextureAtlases>
     <IconDefinitions>
         <!--香格里拉-->
-        <Row Name="ICON_LEADER_SHANGRI_LA_CV38" Atlas="ATLAS_EAGLE_UNION_XP2_LEADERS" Index="0"/>
+        <Row Name="ICON_LEADER_SHANGRI_LA_CV38" Atlas="ATLAS_EAGLE_UNION_XP2_LEADERS"   Index="0"/>
+        <!--记录图标-->
+        <Row Name="ICON_SHANGRI_LA_RECORD"      Atlas="ATLAS_EAGLE_UNION_ACTION"        Index="7"/>
     </IconDefinitions>
 </GameData>
