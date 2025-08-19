@@ -81,6 +81,9 @@
           </Properties>
           <File>UI/Additions/ShangriLaUnitPanel.xml</File>
         </AddUserInterfaces>
+        <AddGameplayScripts id="Script">
+          <File>Scripts/EagleUnionShangri-La.lua</File>
+        </AddGameplayScripts>
         <UpdateDatabase id="ShangriLa">
           <File>Data/Shangri-La/EagleUnion_Shangri-La_Leader.xml</File>
         </UpdateDatabase>
@@ -112,6 +115,9 @@
     <Content Include="Import\EagleUnionPoint_Shangri-La.lua">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Scripts\EagleUnionShangri-La.lua">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Text\zh_Hans_CN\EagleUnion_Shangri-La_CNText.xml">
       <SubType>Content</SubType>
     </Content>
@@ -126,6 +132,7 @@
     <Folder Include="Data" />
     <Folder Include="Data\Shangri-La" />
     <Folder Include="Import" />
+    <Folder Include="Scripts" />
     <Folder Include="UI" />
     <Folder Include="Text" />
     <Folder Include="Text\zh_Hans_CN" />

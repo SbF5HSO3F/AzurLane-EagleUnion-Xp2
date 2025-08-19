@@ -27,7 +27,7 @@ function ShangriLaPanel.GetDetails(pUnit)
     local count = player:GetProperty(key_1) or {}
     local resourceData = player:GetResources()
     -- 单位是否相邻或位于资源单元格
-    local tplots = Map.GetAdjacentPlots(pUnit:GetX(), pUnit:GetY())
+    local tplots = Map.GetNeighborPlots(pUnit:GetX(), pUnit:GetY(), 1)
     for _, plot in ipairs(tplots) do
         local resource = plot:GetResourceType()
         if resource ~= -1 and resourceData:IsResourceVisible(resource) then
@@ -62,7 +62,6 @@ function ShangriLaPanel:Refresh()
         Controls.ShangriLaGrid:SetHide(false)
         -- 获取细节
         local detail = self.GetDetails(unit)
-        EagleDebug:printd(detail, '', 'Details')
         local disable = detail.Disable
         -- 设置按钮状态
         Controls.Record:SetDisabled(disable)
@@ -92,14 +91,38 @@ function ShangriLaPanel:Refresh()
     ContextPtr:LookUpControl("/InGame/UnitPanel"):RequestRefresh()
 end
 
+-- 回调函数
+function ShangriLaPanel:Callback()
+    -- 获取单位
+    local unit = UI.GetHeadSelectedUnit()
+    if unit == nil then return end
+    -- 获取细节
+    local detail = self.GetDetails(unit)
+    if detail.Disable then return end
+    -- 请求玩家操作
+    UI.RequestPlayerOperation(Game.GetLocalPlayer(),
+        PlayerOperations.EXECUTE_SCRIPT, {
+            UnitID  = unit:GetID(),
+            Index   = detail.Index,
+            OnStart = 'ShangriLaRecord',
+        }
+    ); Network.BroadcastPlayerInfo()
+end
+
+-- 注册函数
+function ShangriLaPanel:Register()
+    Controls.Record:RegisterCallback(Mouse.eLClick, function() self:Callback() end)
+    Controls.Record:RegisterCallback(Mouse.eMouseEnter, EagleUnionEnter)
+end
+
 -- 初始化
 function ShangriLaPanel:Init()
     local context = ContextPtr:LookUpControl("/InGame/UnitPanel/StandardActionsStack")
     if context then
         -- 更改父控件
         Controls.ShangriLaGrid:ChangeParent(context)
-        -- 刷新
-        self:Refresh()
+        -- 注册并刷新
+        self:Register(); self:Refresh()
     end
 end
 
