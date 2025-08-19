@@ -90,6 +90,17 @@ function ShangriLaPanel:Refresh()
                 end
             end
         end
+        -- 记录产出总结
+        local total, yields = '', datas.Yields or {}
+        for key, val in pairs(yields) do
+            local tip = 'LOC_SHANGRI_LA_' .. key
+            total = total .. Locale.Lookup(tip, val)
+        end
+        if total ~= '' then
+            tooltip = tooltip .. '[NEWLINE][NEWLINE]' ..
+                Locale.Lookup('LOC_SHANGRI_LA_RECORD_YIELD') .. total
+        end
+        -- 其他
         if disable then
             tooltip = tooltip .. '[NEWLINE][NEWLINE]' .. detail.Reason
         else
