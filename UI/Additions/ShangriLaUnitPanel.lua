@@ -180,11 +180,11 @@ end
 function ShangriLaUnitActive(owner, unitID, x, y, eReason)
     local pUnit = UnitManager.GetUnit(owner, unitID)
     if eReason == ActReason then
-        -- SimUnitSystem.SetAnimationState(pUnit, "SPAWN", "IDLE")
+        SimUnitSystem.SetAnimationState(pUnit, "SPAWN", "IDLE")
         --get the unit x and y
-        -- local uX, uY = pUnit:GetX(), pUnit:GetY()
+        local uX, uY = pUnit:GetX(), pUnit:GetY()
         --play the effect
-        -- WorldView.PlayEffectAtXY("ENTERPRISE_RECOVER", uX, uY)
+        WorldView.PlayEffectAtXY("SHANGRI_LA_RECORD", uX, uY)
         --refersh the panel
         ShangriLaPanel:Refresh()
     end
