@@ -58,6 +58,10 @@ function ShangriLaRecord(playerID, param)
         for i = 1, change do player:AttachModifierByID(modifier) end
     end
     player:SetProperty(key_2, datas)
+    local unit = UnitManager.GetUnit(playerID, param.UnitID)
+    UnitManager.ChangeMovesRemaining(unit, -1)
+    -- 请求单位动画
+    UnitManager.ReportActivation(unit, "SHANGRI_LA_RECORD")
     -- 设置记录完成
     Game:SetProperty('ShangriLaReset', true)
 end

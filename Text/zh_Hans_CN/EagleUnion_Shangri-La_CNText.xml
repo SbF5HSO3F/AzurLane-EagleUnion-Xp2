@@ -50,7 +50,7 @@
 			<Text>记录</Text>
 		</Replace>
 		<Replace Tag="LOC_SHANGRI_LA_RECORD_DESC" Language="zh_Hans_CN">
-			<Text>在位于或相邻资源的单元格上激活，每回合获得的 [ICON_ResearchPoint] 研究点数+5%。</Text>
+			<Text>在位于或相邻资源的单元格上激活。消耗1点 [ICON_Movement] 移动力，使改良设施增加等同于该资源增加的产出且每回合获得的 [ICON_ResearchPoint] 研究点数+5%。</Text>
 		</Replace>
 		<Replace Tag="LOC_SHANGRI_LA_RECORD_DETAIL" Language="zh_Hans_CN">
 			<Text>记录资源：{1_Icon} {2_Resource}</Text>

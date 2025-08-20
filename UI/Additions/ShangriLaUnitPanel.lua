@@ -7,6 +7,7 @@ include('EagleCore')
 include('EagleResources')
 
 Resources = EagleResources:new(true)
+ActReason = DB.MakeHash('SHANGRI_LA_RECORD')
 
 --||===================local variables====================||--
 
@@ -24,6 +25,12 @@ function ShangriLaPanel.GetDetails(pUnit)
         Index = -1,
         Reason = ''
     }, Players[pUnit:GetOwner()]
+    -- 单位是否拥有移动力
+    if pUnit:GetMovesRemaining() < 1 then
+        details.Reason = Locale.Lookup('LOC_EAGLE_ACTION_REASON_NO_MOVEMENT')
+        return details
+    end
+
     local count = player:GetProperty(key_1) or {}
     local resourceData = player:GetResources()
     -- 单位是否相邻或位于资源单元格
@@ -38,15 +45,14 @@ function ShangriLaPanel.GetDetails(pUnit)
     -- 是否拥有资源
     if details.Index == -1 then
         details.Reason = Locale.Lookup('LOC_EAGLE_ACTION_REASON_NO_ON_OR_ADJACENT_RESOURCES')
-    else
-        -- 资源是否已经被记录
-        if count[details.Index] == true then
-            details.Reason = Locale.Lookup('LOC_EAGLE_ACTION_REASON_RESOURCES_RECORDED')
-        else
-            details.Disable = false
-        end
+        return details
     end
-
+    -- 资源是否已经被记录
+    if count[details.Index] == true then
+        details.Reason = Locale.Lookup('LOC_EAGLE_ACTION_REASON_RESOURCES_RECORDED')
+    else
+        details.Disable = false
+    end
     return details
 end
 
@@ -170,6 +176,20 @@ function ShangriLaUnitSelectedChanged(playerId, unitId, locationX, locationY, lo
     if isSelected and playerId == Game.GetLocalPlayer() then ShangriLaPanel:Refresh() end
 end
 
+--On Unit Active
+function ShangriLaUnitActive(owner, unitID, x, y, eReason)
+    local pUnit = UnitManager.GetUnit(owner, unitID)
+    if eReason == ActReason then
+        -- SimUnitSystem.SetAnimationState(pUnit, "SPAWN", "IDLE")
+        --get the unit x and y
+        -- local uX, uY = pUnit:GetX(), pUnit:GetY()
+        --play the effect
+        -- WorldView.PlayEffectAtXY("ENTERPRISE_RECOVER", uX, uY)
+        --refersh the panel
+        ShangriLaPanel:Refresh()
+    end
+end
+
 -- 添加按钮
 function ShangriLaAddButton()
     ShangriLaPanel:Init()
@@ -186,7 +206,7 @@ function Initialize()
     Events.LoadGameViewStateDone.Add(ShangriLaAddButton)
     Events.LoadGameViewStateDone.Add(ShangriLaReinit)
     Events.UnitSelectionChanged.Add(ShangriLaUnitSelectedChanged)
-    --Events.UnitActivate.Add(StLouisUnitActive)
+    Events.UnitActivate.Add(ShangriLaUnitActive)
     ------------------------------------------
     Events.UnitAddedToMap.Add(ShangriLaRefresh)
     Events.UnitOperationSegmentComplete.Add(ShangriLaRefresh)
